@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <title>Jam &amp; Kalender Digital</title>
+        <link rel="stylesheet" href="index.css">
+    <style>
+    </style>
+    </head>
+    <body>
+        <nav id="nav">
+            <button onclick="back()">
+                <span class="material-icons">
+                    arrow_back
+                </span>
+            </button>
+            <button id="judul">
+                JawaKui
+            </button>
+            <button onclick="menu(4)">
+                <span class="material-icons">
+                    menu
+                </span>
+            </button>
+        </nav>
+        <div class="nav">
+            <strong>Nilai Hari</strong>
+            <div id="hariJawa"></div>
+            <strong>Nilai Pasaran</strong>
+            <div id="hariNasional"></div>
+            <div id="tab">
+                <strong>Watak weton Khusus Wanita</strong>
+                <form id="jodoh" class="wetonInfo" name='tanggal'>
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="a">
+                    <input type="submit" id="subns" value="Hitung Weton">
+                </form>
+            </div>
+        </div>
+        <div id="kolom" style="display: none">
+            <div id="tab">
+                <blockquote id="quran">'Hasil Penghitungan tanggal lahir'</blockquote>
+                <blockquote id="bacaan"></blockquote>
+            </div>
+        </div>
+        <footer>
+            <button class="buttons" onclick="menu(0)">
+                <span class="material-icons">
+                    home
+                </span>
+                Home
+            </button>
+            <button class="buttons" onclick="menu(1)">
+                <span class="material-icons">
+                    accessibility
+                </span>
+                Watak
+            </button>
+            <button class="buttons" onclick="menu(2)">
+                <span class="material-icons">
+                    favorite
+                </span>
+                Jodoh
+            </button>
+            <button class="buttons" onclick="menu(3)">
+                <span class="material-icons">
+                    event
+                </span>
+                Calender
+            </button>
+            <button class="buttons" onclick="menu(9)">
+                <span class="material-icons">
+                    female
+                </span>
+                Weton
+            </button>
+        </footer>
+        <script src="cordova.js"></script>
+        <script src="hari.js"></script>
+        <script src="menu.js"></script>
+        <script type='text/javascript'>
+            document.querySelector('form').onsubmit = function showWeton(a) {
+                a.preventDefault()
+                oldAdmob.int()
+                b = neptu(a.target.a.value)
+                console.log()
+                bacaan.setAttribute('data-before',b.masehi)
+                bacaan.innerHTML = `${b.hariMa} ${b.pasar} Neptu ${b.nilai}`
+                bacaan.setAttribute('data-after',wetonWanita[b.nilai])
+                kolom.style.display = 'block'
+                kolom.scrollIntoView({behavior: 'smooth' });
+            }
+            document.addEventListener('deviceready', weton, false)
+            document.addEventListener("backbutton", back, false)
+        </script>
+    </body>
+</html>

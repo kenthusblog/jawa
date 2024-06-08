@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="index.css">
+    <title>Jam &amp; Kalender Digital</title>
+    <style>
+        #kolom{
+            margin-bottom: 0
+        }
+        #kolom blockquote#logoApp {
+            background-color: transparent;
+        }
+        blockquote#logoApp:before {
+            position: relative;
+            float: left;
+            left: calc(50% - 75px);
+            content: '';
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-image: url('file:///android_res/mipmap/ic_launcher.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        blockquote#judulApp {
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: x-large;
+            position: relative;
+            float: left;
+            text-align: center;
+        }
+        blockquote#judulApp:after {
+            position: relative;
+            float: left;
+            content: attr(data-after);
+            font-size: small;
+            font-weight: normal;
+            font-style: normal;
+            text-align: center;
+            width: 100%;
+            text-transform: capitalize; 
+        }
+        blockquote#smoothApp {
+            border-left: 3px solid #84c5ff;
+            color: #1a1a1a;
+            font-style: italic;
+            line-height: 1.5em;
+            position: relative;
+            text-transform: capitalize; 
+            float: left;
+        }
+        blockquote#smoothApp:after {
+            position: relative;
+            float: left;
+            content: attr(data-after);
+            font-style: normal;
+            font-size: 0.75em;
+            font-weight: bold;
+            height: auto;
+            text-transform: capitalize; 
+            width: 100%;
+        }
+        #giveTentang{
+            position: relative;
+            float: left;
+            width: 100%;
+            padding: 20px;
+            background-color : #fff;
+            margin-bottom: 5px
+        }
+        #giveTentang strong{
+            position: relative;
+            float: left;
+            text-align: center;
+            padding:10px
+        }
+        #thank{
+            position: relative;
+            float: left;
+            width: calc(100%/3);
+            height: 100px;
+            text-align: center;
+            padding: 5px
+        }
+        #thank i{
+            position: relative;
+            float: left;
+            width: 100%;
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        button#judulApp {
+            color: #1a1a1a;
+            font-weight: bold;
+            position: relative;
+            float: left;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <button onclick="back()">
+            <span class="material-icons">
+                arrow_back
+            </span>
+        </button>
+        <button id="judul">
+            JawaKui
+        </button>
+        <button></button>
+    </nav>
+    <div class="nav"></div>
+    <div id="kolom">
+        <div id="tab">
+            <blockquote id="logoApp"></blockquote>
+            <blockquote id="judulApp" data-after="v3.0.0">JawaKui</blockquote>
+            <blockquote id="smoothApp" data-after="Smooth Home Production">Kalender jawa dan kalkulator weton dan perhitungan lain berdasarkan kitab-kitab jawa kuno, dapat berjalan secara offline dan berukuran kecil sehingga tidak memakan pengunaan RAM yang banyak.</blockquote>
+        </div>
+        <div id="tab">
+            <blockquote id="judulApp">Thanks to</blockquote>
+            <blockquote id="smoothApp" data-after="Thank you for never giving up even though you often feel defeated">For the most important person in my life, this time let me apologize to myself and thank myself...</blockquote>
+            <blockquote id="judulApp">And Thanks to</blockquote>
+        </div>
+        <div id="giveTentang">
+            <div class="koloms">
+                <div id="thank">
+                    <i class="fas fa-kaaba"></i>
+                    <strong>Allah</strong>
+                </div>
+                <div id="thank">
+                    <i class="fas fa-user-graduate"></i>
+                    <strong>My teacher</strong>
+                </div>
+                <div id="thank">
+                    <i class="fas fa-users"></i>
+                    <strong>My parents</strong>
+                </div>
+                <div id="thank">
+                    <i class="fab fa-google"></i>
+                    <strong>Google</strong>
+                </div>
+                <div id="thank">
+                    <i class="fab fa-js"></i>
+                    <strong>Javascript</strong>
+                </div>
+                <div id="thank">
+                    <i class="fab fa-stack-overflow"></i>
+                    <strong>Stack overflow</strong>
+                </div>
+                <div id="thank">
+                    <i class="fab fa-github"></i>
+                    <strong>Github</strong>
+                </div>
+            </div>
+        </div>
+        <div id="tab">
+            <button id="judulApp" onclick="menu(5)">Share</button>
+            <button id="judulApp" onclick="menu(6)">Feedback</button>
+            <button id="judulApp" onclick="menu(7)">Update</button>
+            <button id="judulApp" onclick="menu(8)">Homepage</button>
+        </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="menu.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+    <script type="text/javascript">
+        document.addEventListener('deviceready', branda, false)
+    </script>
+</body>
+
+</html>

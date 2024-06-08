@@ -1,0 +1,702 @@
+
+.dte{
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: #84c5ff;
+    font-weight: bold;
+    border:1px solid #fff;
+}
+.dtes{
+    position: relative;
+    float: left;
+    width: calc(100%/3);
+    text-align: center;
+    padding: 5px;
+    background-color: #84c5ff;
+    border:1px solid #fff;
+}
+
+
+table {
+    width: 100%;
+    height: auto;
+    cursor: default;
+    border: none;
+}
+
+td {
+    width: auto;
+    height: auto;
+    background-color: #e9e9ed;;
+    text-align: center;
+    border: none;
+    border:3px solid #e9e9ed;
+}
+
+
+.dy {
+    width: calc(100%/7);
+    height: auto;
+    border-radius: 10px;
+    padding: 5px
+}
+.dyh {
+    width: calc(100%/7);
+    height: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #70b8f7;
+    color: #4a4a4a
+}
+.ring {
+    border: 3px solid #70b8f7;
+}
+
+.dy div,
+.dy span,
+.dy i,
+.dy blockquote {
+    color: #000
+}
+.dy blockquote {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    font-weight:bold;
+    color: #000;
+}
+.dy blockquote:before {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    font-size: x-small;
+    text-align: left;
+    font-weight:normal;
+    content: attr(data-angka);
+    color: #000
+}
+.dy blockquote:after {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    font-size: x-small;
+    text-align: center;
+    font-weight:normal;
+    content: attr(data-nama);
+    color: #000
+}
+cite{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 2px;
+}
+.day {
+    background-color: #70b8f7
+}
+
+
+.dayBig {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    float: left;
+    margin-bottom: 120px
+}
+
+.judulDay {
+    font-weight: bold;
+}
+
+#listDay {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 10px
+}
+
+#down {
+    position: fixed;
+    bottom: 120px;
+    margin: 10px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-animation: blink 1s linear infinite;
+    -moz-animation: blink 1s linear infinite;
+    animation: blink 1s linear infinite;
+    background-color: #84c5ff;
+    color: #fff;
+    display: none;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+#listHari {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 70px;
+    padding-bottom: 70px
+}
+
+
+#hariJawa,
+#hariNasional {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px
+}
+
+#wetonInfo,
+#wetonJodoh{
+    position: relative;
+    float: left;
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+}
+
+.wetonInfo {
+    width: 100%;
+    height: auto;
+    padding: 5px
+}
+
+.wetonInfo input,
+.wetonInfo label {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px
+}
+
+.wetonInfo input {
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid
+}
+
+#subns {
+    border: none;
+    background-color: #84c5ff;
+    color: #fff
+}
+
+
+
+body,
+html,
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e9e9ed;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #333;
+    font-weight: 400;
+    background-color: #e9e9ed
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #84c5ff;
+    padding: 10px;
+    z-index: 20
+}
+
+#nav button {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: 20%;
+    background-color: #70b8f7;
+    color: #fff;
+}
+
+#nav button span {
+    position: relative;
+    float: left;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 10px
+}
+
+#nav button#judul {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: 60%;
+    background-color: #70b8f7;
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+}
+
+#sea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    z-index: 22;
+    display: none;
+}
+
+#sea button {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    float: left;
+    background-color: #fff;
+    color: #fff;
+}
+
+#sea button span {
+    position: relative;
+    float: left;
+    width: 100%;
+    color: #000;
+    margin-bottom: 10px
+}
+
+#sea input {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: calc(100% - 100px);
+    background-color: #fff;
+    border: none;
+    color: #000;
+}
+
+#sea #resets span {
+    display: none;
+    color: red
+}
+
+.nav {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 75px
+}
+#kolom {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 100px;
+    min-height: 100px
+}
+
+#kolom #list {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 5px
+}
+
+#kolom #list #judulDoa {
+    height: auto;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    color: #000;
+    text-align: left;
+}
+
+#kolom #list #numb {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: 50px;
+    padding: 5px
+}
+
+#kolom #list #numb span {
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #70b8f7;
+    border-radius: 50%;
+}
+
+#kolom #list #texts {
+    padding: 5px;
+    height: 50px;
+    position: relative;
+    float: left;
+    width: calc(100% - 150px);
+    color: #000
+}
+
+#kolom #list #texts span {
+    position: relative;
+    float: left;
+    text-align: left;
+    width: 100%;
+    color: #000
+}
+
+#kolom #list #texts #juduls {
+    height: 70%;
+    font-size: large;
+    font-weight: bold;
+}
+
+#kolom #list #texts #bacas {
+    height: 30%;
+}
+
+#kolom #list #ayats {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: 100px;
+    padding: 10px
+}
+
+#kolom #list #ayats span {
+    position: relative;
+    float: right;
+    height: auto;
+    width: auto;
+    border: 1px solid #70b8f7;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #84c5ff;
+    color: #fff;
+}
+
+#kolom #judul {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    font-size: large;
+}
+
+#kolom #baca,
+#kolom #indo,
+#kolom #arab,
+#kolom #isi,
+#kolom #quran,
+#kolom #bacaan,
+#kolom #judulApp,
+#kolom #smoothApp,
+#kolom #logoApp,
+#kolom #text {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px
+}
+
+#kolom #arab{
+    padding: 20px;
+    text-align: right;
+    font-size: xx-large;
+}
+
+#kolom #waktu,
+#kolom #refrensi {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+#kolom #list #judulBookmark,
+#kolom #list #isiBookmark,
+#kolom #list #tanggalBookmark {
+    text-align: left;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    color: #000;
+}
+
+input {
+    width: 28px;
+    height: 24px;
+    cursor: pointer;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+i {
+    font-size: x-small;
+    color: #000
+}
+
+strong {
+    font-size: large;
+    width: 100%;
+    position: relative;
+    float: left;
+    display: block;
+}
+
+span {
+    font-size: x-small;
+    color: black;
+    width: 50%;
+    height: 15px;
+    display: block;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 25;
+}
+
+footer button {
+    height: 50px;
+    position: relative;
+    float: left;
+    width: 20%;
+    background-color: #70b8f7;
+    color: #fff;
+}
+
+footer button span {
+    position: relative;
+    float: left;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 10px
+}
+
+footer .button {
+    position: relative;
+    float: left;
+    width: 25%;
+    background-color: #84c5ff;
+}
+
+footer .button span {
+    color: #000
+}
+
+footer .info {
+    position: relative;
+    float: left;
+    width: 50%;
+    background-color: #b9deff;
+    color: #575757
+}
+
+footer button#disabled {
+    background-color: #90cbff;
+}
+footer button#disabled span{
+    color: #a4a4a4;
+}
+
+#tab {
+    background-color: #fff;
+    display: inline-block;
+    padding: 20px;
+    width: 100%
+}
+
+blockquote#quran {
+    color: #1a1a1a;
+    font-style: italic;
+    position: relative;
+    float: left;
+    border-top: 2px solid#84c5ff;
+    font-weight: bold;
+}
+blockquote#quran:after {
+    position: relative;
+    float: left;
+    content: attr(data-after);
+    font-style: normal;
+    text-align: left;
+    height: auto;
+    width: 100%;
+    padding: 5px;
+}
+blockquote#bacaan,blockquote#detailJodoh,blockquote.list{
+    border-left: 3px solid #84c5ff;
+    color: #1a1a1a;
+    font-style: italic;
+    line-height: 1.5em;
+    position: relative;
+    text-transform: capitalize;
+    float: left;
+}
+blockquote.list{
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #fff
+}
+blockquote#bacaan:after,blockquote#bacaan:before,blockquote#detailJodoh:after,blockquote#detailJodoh:before,blockquote.list:before{
+    position: relative;
+    float: left;
+    content: attr(data-after);
+    font-style: normal;
+    text-align: right;
+    font-size: 0.75em;
+    font-weight: bold;
+    height: auto;
+    text-transform: capitalize;
+    width: 100%;
+}
+blockquote.list:before{
+    text-align: left;
+}
+blockquote#bacaan:before,blockquote#detailJodoh:before{
+    content: attr(data-before);
+    text-align: left;
+    font-size: 1em;
+}
+blockquote#infoJodoh {
+    color: #1a1a1a;
+    position: relative;
+    text-transform: capitalize;
+    float: left;
+}
+blockquote#infoJodoh:before{
+    position: relative;
+    float: left;
+    content: attr(data-before);
+    height: auto;
+    text-transform: capitalize;
+    width: 100%;
+}
+blockquote#infoJodoh:after{
+    position: relative;
+    float: left;
+    content: attr(data-after);
+    height: auto;
+    text-transform: capitalize;
+    width: 100%;
+}
+#nilai{
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    background-color: #84c5ff;
+    border-radius: 25px;
+    margin:1px;
+}

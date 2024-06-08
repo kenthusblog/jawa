@@ -1,0 +1,154 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Jam &amp; Kalender Digital</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="nav">
+        <button>
+        </button>
+        <button id="judul">
+            JawaKui
+        </button>
+        <button onclick="menu(4)">
+            <span class="material-icons">
+                menu
+            </span>
+        </button>
+    </nav>
+    <div class="nav">
+        <div class='dtes' id='showHari'></div>
+        <div class='dtes' id='showWeton'></div>
+        <div class='dtes' id='showTotal'></div>
+        <div class='dte' id='showDate'></div>
+        <div class='dte' id='showDay'></div>
+        <table border='1' borderColor='#808080' cellSpacing='0' cellPadding='0'>
+            <tr>
+                <td class='dyh'>Min</td>
+                <td class='dyh'>Sen</td>
+                <td class='dyh'>Sel</td>
+                <td class='dyh'>Rab</td>
+                <td class='dyh'>Kam</td>
+                <td class='dyh'>Jum</td>
+                <td class='dyh'>Sab</td>
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+            <tr>
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+                <td colSpan='1' class='dy' />
+            </tr>
+        </table>
+    </div>
+    <div id="kolom">
+        <div class="judulDay">Hari besar Nasional</div>
+        <div id="listDay"></div>
+    </div>
+    <footer>
+        <button class="button" onClick='chgMth(1);'>
+            <span class="material-icons">
+                navigate_before
+            </span>
+        </button>
+        <button class="info">
+            <strong class='myh' id='mTyR'></strong>
+        </button>
+        <button class="button" onClick='chgMth(2);'>
+            <span class="material-icons">
+                navigate_next
+            </span>
+        </button>
+        <button class="buttons" onclick="menu(0)">
+            <span class="material-icons">
+                home
+            </span>
+            Home
+        </button>
+        <button class="buttons" onclick="menu(1)">
+            <span class="material-icons">
+                accessibility
+            </span>
+            Watak
+        </button>
+        <button class="buttons" onclick="menu(2)">
+            <span class="material-icons">
+                favorite
+            </span>
+            Jodoh
+        </button>
+        <button class="buttons" onclick="menu(3)">
+            <span class="material-icons">
+                event
+            </span>
+            Calender
+        </button>
+        <button class="buttons" onclick="menu(9)">
+            <span class="material-icons">
+                female
+            </span>
+            Weton
+        </button>
+    </footer>
+    <button id="down" class="material-icons" onclick="downs()">arrow_drop_down</button>
+    <script src="cordova.js"></script>
+    <script src="hari.js"></script>
+    <script src="menu.js"></script>
+    <script type='text/javascript'>
+    document.addEventListener('deviceready', iklans, false)
+</script>
+</body>
+
+</html>

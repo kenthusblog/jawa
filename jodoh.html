@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <title>Jam &amp; Kalender Digital</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <nav id="nav">
+            <button onclick="back()">
+                <span class="material-icons">
+                    arrow_back
+                </span>
+            </button>
+            <button id="judul">
+                JawaKui
+            </button>
+            <button onclick="menu(4)">
+                <span class="material-icons">
+                    menu
+                </span>
+            </button>
+        </nav>
+        <div class="nav">
+            <strong>Nilai Hari</strong>
+            <div id="hariJawa"></div>
+            <strong>Nilai Pasaran</strong>
+            <div id="hariNasional"></div>
+            <div id="tab">
+                <strong>Kecocokan Weton</strong>
+                <form id="jodoh" class="wetonInfo" name='tanggal'>
+                    <label>Tanggal Lahir Anda</label>
+                    <input type="date" name="a">
+                    <label>Tanggal Lahir Pasangan</label>
+                    <input type="date" name="b">
+                    <input type="submit" id="subns" value="Hitung Kecocokan">
+                </form>
+            </div>
+        </div>
+        <div id="kolom" style="display: none">
+            <div id="tab">
+                <blockquote id="quran">'Hasil Penghitungan Kecocokan'</blockquote>
+                <blockquote id="infoJodoh"></blockquote>
+                <blockquote id="bacaan" data-before="Anda"></blockquote>
+                <blockquote id="bacaan" data-before="Pasangan Anda"></blockquote>
+                <blockquote id="bacaan"></blockquote>
+                <blockquote id="bacaan" data-before="Jodoh"></blockquote>
+                <blockquote id="bacaan" data-before="Tanggal Lahir"></blockquote>
+                <blockquote id="bacaan" data-before="Jodoh"></blockquote>
+            </div>
+        </div>
+        <footer>
+            <button class="buttons" onclick="menu(0)">
+                <span class="material-icons">
+                    home
+                </span>
+                Home
+            </button>
+            <button class="buttons" onclick="menu(1)">
+                <span class="material-icons">
+                    accessibility
+                </span>
+                Watak
+            </button>
+            <button class="buttons" onclick="menu(2)">
+                <span class="material-icons">
+                    favorite
+                </span>
+                Jodoh
+            </button>
+            <button class="buttons" onclick="menu(3)">
+                <span class="material-icons">
+                    event
+                </span>
+                Calender
+            </button>
+            <button class="buttons" onclick="menu(9)">
+                <span class="material-icons">
+                    female
+                </span>
+                Weton
+            </button>
+        </footer>
+        <script src="cordova.js"></script>
+        <script src="hari.js"></script>
+        <script src="menu.js"></script>
+        <script type='text/javascript'>
+            document.querySelector('form').onsubmit = function submitJodoh(a){
+                a.preventDefault()
+                oldAdmob.int()
+                b = neptu(a.target.a.value)
+                c = neptu(a.target.b.value)
+                h = b.nilai + c.nilai
+                baca = document.querySelectorAll('#bacaan')
+                baca[0].innerHTML = `${b.hariMa} ${b.pasar} Neptu ${b.nilai}`
+                baca[0].setAttribute('data-after',b.hijri)
+                baca[1].innerHTML = `${c.hariMa} ${c.pasar} Neptu ${c.nilai}`
+                baca[1].setAttribute('data-after',c.hijri)
+                for(i = 0,j = 7;j * i < h;i++){
+                    k = h -( j * i)
+                }
+                baca[2].setAttribute('data-before',`Total Neptu ${h}`)
+                baca[2].innerHTML = nep.find(data => data.nilai === k).nama
+                baca[2].setAttribute('data-after',nep.find(data => data.nilai === k).detail)
+                baca[3].innerHTML = jodoh.find(data => data.nilai.find(elem => elem === h )).nama
+                baca[3].setAttribute('data-after',jodoh.find(data => data.nilai.find(elem => elem === h )).detail)
+                l = Number(b.tanggalMa.split(' ')[1]) + Number(c.tanggalMa.split(' ')[1])
+                if(l >= 2 || l <= 14 ){
+                    m = 0
+                }else if(l >= 15 || l <= 29 ){
+                    m = 1
+                }else if(l >= 30 || l <= 41 ){
+                    m = 2
+                }else if(l >= 42 || l <= 53 ){
+                    m = 3
+                }else if(l >= 54 || l <= 62 ){
+                    m = 4
+                }
+                baca[4].innerHTML = jodohTanggalLahir[m]
+                kolom.style.display = 'block'
+                kolom.scrollIntoView({behavior: 'smooth' });
+            }
+            document.addEventListener('deviceready', weton, false)
+            document.addEventListener("backbutton", back, false)
+        </script>
+    </body>
+</html>

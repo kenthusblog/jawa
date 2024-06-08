@@ -1,0 +1,160 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Jam &amp; Kalender Digital</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @font-face {
+            font-family: 'Noto Sans Javanese';
+            src: url('noto2.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <button onclick="back()">
+            <span class="material-icons">
+                arrow_back
+            </span>
+        </button>
+        <button id="judul">
+            JawaKui
+        </button>
+        <button onclick="menu(4)">
+            <span class="material-icons">
+                menu
+            </span>
+        </button>
+    </nav>
+    <div class="nav">
+        <strong>Nilai Hari</strong>
+        <div id="hariJawa"></div>
+        <strong>Nilai Pasaran</strong>
+        <div id="hariNasional"></div>
+        <div id="tab">
+            <strong>Kecocokan Nama dan watak</strong>
+            <form id="jodoh" class="wetonInfo" name='tanggal'>
+                <label>Nama lengkap</label>
+                <input type="text" name="a" placeholder="Nama lengkap">
+                <label>Tanggal Lahir</label>
+                <input type="date" name="b">
+                <input type="submit" id="subns" value="Hitung Weton">
+            </form>
+        </div>
+    </div>
+    <div id="kolom" style="display: none">
+        <div id="tab">
+            <blockquote id="quran"></blockquote>
+            <blockquote id="bacaan"></blockquote>
+            <blockquote id="bacaan" data-before='Hari lahir'></blockquote>
+            <blockquote id="bacaan" data-before='Tanggal lahir'></blockquote>
+            <blockquote id="bacaan" data-before='Bulan lahir'></blockquote>
+            <blockquote id="bacaan" data-before='Neptu'></blockquote>
+            <blockquote id="bacaan" data-before='Aksara Jawa'></blockquote>
+            <blockquote id="bacaan" data-before='Nama Depan'></blockquote>
+            <blockquote id="bacaan" data-before='Nama Lengkap'></blockquote>
+            <blockquote id="bacaan" data-before='Wuku'></blockquote>
+        </div>
+    </div>
+    <footer>
+        <button class="buttons" onclick="menu(0)">
+            <span class="material-icons">
+                home
+            </span>
+            Home
+        </button>
+        <button class="buttons" onclick="menu(1)">
+            <span class="material-icons">
+                accessibility
+            </span>
+            Watak
+        </button>
+        <button class="buttons" onclick="menu(2)">
+            <span class="material-icons">
+                favorite
+            </span>
+            Jodoh
+        </button>
+        <button class="buttons" onclick="menu(3)">
+            <span class="material-icons">
+                event
+            </span>
+            Calender
+        </button>
+        <button class="buttons" onclick="menu(9)">
+            <span class="material-icons">
+                female
+            </span>
+            Weton
+        </button>
+    </footer>
+    <script src="cordova.js"></script>
+    <script src="hari.js"></script>
+    <script src="jawa.js"></script>
+    <script src="menu.js"></script>
+    <script>
+        document.querySelector('form').onsubmit = function(a) {
+            a.preventDefault()
+            localStorage.setItem("spasi",true)
+            oldAdmob.int()
+            baca = document.querySelectorAll('#bacaan')
+            b = neptu(a.target.b.value)
+            c = new Date(a.target.b.value)
+            quran.innerHTML = b.hariMa + ' ' + b.pasar
+            quran.setAttribute('data-after',hariWeton[b.hariMa + ' ' + b.pasar])
+            baca[0].setAttribute('data-before',a.target.a.value)
+            baca[0].innerHTML = b.masehi
+            baca[0].setAttribute('data-after',b.hijri)
+            baca[1].innerHTML = b.hariMa
+            baca[1].setAttribute('data-after',hariLahir[b.hariMa])
+            baca[2].innerHTML = b.tanggalMa
+            baca[2].setAttribute('data-after',tanggalLahir[b.tanggalMa])
+            baca[3].innerHTML = b.bulanMa
+            baca[3].setAttribute('data-after',new Intl.ListFormat('id-ID',{style:'long',type:'conjunction'}).format(bulanLahir[b.bulanMa]))
+            baca[4].innerHTML = `${b.hariMa} ${b.pasar} Neptu ${b.nilai}`
+            baca[4].setAttribute('data-after',wet.find(data => data.nilai === b.nilai).detail)
+            baca[5].innerHTML =  DoTransliterate(a.target.a.value)
+            s = 0
+            for(t of baca[5].innerHTML.split(' ')[0]){
+                u = namaWukuh.findIndex(v => v === t)
+                s += u + 1
+            }
+            v = s > 10? parseInt(s.toString().split("").pop()) : s
+            baca[6].innerHTML = a.target.a.value.split(' ')[0] + ' = ' + s
+            for(w in namaPendek[v-1]){
+                baca[6].setAttribute('data-after', w + ' : ' + new Intl.ListFormat('id-ID',{style:'long',type:'conjunction'}).format(namaPendek[v-1][w]))
+            }
+            f = 0
+            for (j of baca[5].innerHTML) {
+                k = namaWukuh.findIndex(l => l === j)
+                f += k + 1
+            }
+            e = b.hariMaNi + b.pasarNi + f
+            for (i = 0, j = 5; e > (i * j); i++) {
+                k = e - (j * i)
+            }
+            baca[7].innerHTML = a.target.a.value + ' = ' + e
+            baca[7].setAttribute('data-after', `Nama dan kelahiran ${!k? 'Sangat' : 'Tidak'} cocok`)
+            l = parseInt(c.getMonth() * 4)
+            m = parseInt(c.getDate() / 7)
+            for (n = 0, o = 23; parseInt(c.getFullYear()) > (n * o); n++) {
+                p = parseInt(c.getFullYear()) - (o * n)
+            }
+            q = l + parseInt(m.toFixed()) + parseInt(wukuhTahun[p])
+            r = q > 30 ? (q - 30) : q
+            baca[8].innerHTML = Object.keys(wukusifat[r])[0]
+            baca[8].setAttribute('data-after', Object.values(wukusifat[r])[0])
+            kolom.style.display = 'block'
+            kolom.scrollIntoView({ behavior: 'smooth' })
+        }
+        document.addEventListener('deviceready', weton, false)
+        document.addEventListener("backbutton", back, false)
+    </script>
+</body>
+</html>
