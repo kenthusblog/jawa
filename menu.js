@@ -42,7 +42,10 @@ menu = buttonIndex => {
             break;
         case 4:
             window.location.href = 'tentang.html'
-            break;        
+            break;
+        case 5:
+            window.location.href = 'tentang.html'
+            break;
         case 6:
             window.location.href = 'mailto:rascallino69@gmail.com'
             break;
