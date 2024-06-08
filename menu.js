@@ -42,10 +42,7 @@ menu = buttonIndex => {
             break;
         case 4:
             window.location.href = 'tentang.html'
-            break;
-        case 5:
-            cordova.plugins.codeplayshareapplink.shareWithContact("JawaKui", "Cara asik melihat tanggal jawa dan weton");
-            break;
+            break;        
         case 6:
             window.location.href = 'mailto:rascallino69@gmail.com'
             break;
